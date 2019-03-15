@@ -1,0 +1,17 @@
+/****** Object:  Table [dbo].[Group]    Committed by VersionSQL https://www.versionsql.com ******/
+
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [dbo].[Group](
+	[Id] [int] NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Type_id] [int] NOT NULL,
+ CONSTRAINT [PK_Group] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+ALTER TABLE [dbo].[Group]  WITH CHECK ADD  CONSTRAINT [FK_Group_Group_Type] FOREIGN KEY([Type_id])
+REFERENCES [dbo].[Group_Type] ([Id])
+ALTER TABLE [dbo].[Group] CHECK CONSTRAINT [FK_Group_Group_Type]
