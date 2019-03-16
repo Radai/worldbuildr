@@ -3,8 +3,9 @@
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 CREATE TABLE [dbo].[Item](
-	[Id] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
+	[Value] [int] NULL,
  CONSTRAINT [PK_Item] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
